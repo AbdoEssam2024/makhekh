@@ -1,0 +1,22 @@
+class ForgetPasswordResponse {
+	bool? success;
+	String? data;
+	String? message;
+	int? statusCode;
+	Errors? errors;
+
+	ForgetPasswordResponse({this.success, this.data, this.message, this.statusCode, this.errors});
+
+	ForgetPasswordResponse.fromJson(Map<String, dynamic> json) {
+		success = json['success'];
+		data = json['data'];
+		message = json['message'];
+		statusCode = json['statusCode'];
+		errors = json['errors'] != null ? Errors.fromJson(json['errors']) : null;
+	}
+}
+
+class Errors {
+	Errors();
+	Errors.fromJson(Map<String, dynamic> json);
+}
